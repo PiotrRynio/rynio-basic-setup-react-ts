@@ -49,9 +49,8 @@ export type Theme = {
   };
   fontWeight: {
     light: string;
-    semiBold: string;
-    medium: string;
-    bold: string;
     regular: string;
+    semiBold: string;
+    bold: string;
   };
 };

@@ -7,8 +7,6 @@ interface GlobalStylesProps {
 }
 
 export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
-
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;

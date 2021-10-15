@@ -1,18 +1,17 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from 'assets/styles/theme';
-import { GlobalStyles } from '../../assets/styles/GlobalStyles';
+import AppProviders from 'providers/AppProviders';
 import { Body1 } from './App.styles';
+import Home from '../Home/Home';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
+    <AppProviders>
       <div>
         HelloWorld
         <Body1>Let's do it!</Body1>
+        <Home />
       </div>
-    </ThemeProvider>
+    </AppProviders>
   );
 }
 

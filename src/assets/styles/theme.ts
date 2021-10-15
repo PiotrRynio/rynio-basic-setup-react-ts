@@ -28,7 +28,7 @@ export const theme: Theme = {
     redMedium: '#DE212B',
   },
   fontFamily: {
-    primary: `'Roboto', sans-serif`,
+    primary: `'Source Sans Pro', sans-serif`,
   },
   fontSize: {
     xxs: '8px',
@@ -45,7 +45,6 @@ export const theme: Theme = {
   fontWeight: {
     light: '300',
     regular: '400',
-    medium: '500',
     semiBold: '600',
     bold: '700',
   },
@@ -61,7 +60,7 @@ export const theme: Theme = {
       `,
       overline: css`
         font-size: ${() => theme.fontSize.sm};
-        font-weight: ${() => theme.fontWeight.medium};
+        font-weight: ${() => theme.fontWeight.regular};
         color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
@@ -83,7 +82,7 @@ export const theme: Theme = {
       `,
       button: css`
         font-size: ${() => theme.fontSize.md};
-        font-weight: ${() => theme.fontWeight.medium};
+        font-weight: ${() => theme.fontWeight.regular};
         color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
