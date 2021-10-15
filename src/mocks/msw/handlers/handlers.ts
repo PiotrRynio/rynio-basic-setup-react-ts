@@ -1,14 +1,14 @@
 import { rest } from 'msw';
-import { launchesHandlerResponse } from './responses/apiPathName_HandlerResponse';
+import { xxxHandlerResponse } from './responses/xxxHandlerResponse';
 
 const API_URL = 'https://api/rest';
 
-const launchesHandler = rest.get(`${API_URL}/launches`, (req, res, ctx) => {
+const xxxHandler = rest.get(`${API_URL}/xxx`, (req, res, ctx) => {
   const fields = req.url.searchParams.get('limit');
   if (fields === '12') {
-    return res(ctx.status(200), ctx.json(launchesHandlerResponse));
+    return res(ctx.status(200), ctx.json(xxxHandlerResponse));
   }
   return res(ctx.status(404));
 });
 
-export const handlers = [launchesHandler];
+export const handlers = [xxxHandler];

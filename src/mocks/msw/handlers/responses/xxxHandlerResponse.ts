@@ -1,4 +1,4 @@
-export const launchesHandlerResponse =
+export const xxxHandlerResponse =
   // 20211014044429
   // https://api.spacex.land/rest/launches?limit=12
 
