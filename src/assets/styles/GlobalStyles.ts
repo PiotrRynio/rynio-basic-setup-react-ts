@@ -1,8 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from './theme';
+import { Theme } from './themeType';
 
-export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+interface GlobalStylesProps {
+  theme: Theme;
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
 
   *, *::before, *::after {
     box-sizing: border-box;
@@ -12,5 +17,23 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${() => theme.fontFamily.primary};
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    border-left: 1px solid #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.primary};
+    -webkit-box-shadow: inset 0 0 6px ${({ theme }) => theme.colors.primary};
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colors.primary};
+    -webkit-box-shadow: inset 0 0 6px ${({ theme }) => theme.colors.primary};
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: ${({ theme }) => theme.colors.primary};
   }
 `;

@@ -1,11 +1,13 @@
 import { css } from 'styled-components';
+import { Theme } from './themeType';
 
-export const theme: any = {
+export const theme: Theme = {
   breakpoints: {
     sm: '560px',
     md: '768px',
     lg: '1024px',
-    xl: '1280px',
+    xl: '1260px',
+    xxl: '1900px',
   },
   letterSpacing: {
     xxs: '0px',
@@ -17,108 +19,101 @@ export const theme: any = {
     xxl: '1.5px',
   },
   colors: {
-    primary: '#34FFC8',
-    secondary: '#6A0572',
-    surface: '#EEEEEE',
-    outline: '#E4E4E4',
+    primary: '#4EADC5',
     darkHard: '#000000',
     darkMedium: '#121212',
-    darkSoft: '#9F9F9F',
-    lightHard: '#FFFFFF',
-    lightMedium: '#FFFFFF',
+    lightSoft: '#E0E0E0',
+    lightMedium: '#324b72',
+    lightHard: '#FFF',
+    redMedium: '#DE212B',
   },
   fontFamily: {
     primary: `'Roboto', sans-serif`,
   },
   fontSize: {
+    xxs: '8px',
     xs: '10px',
     sm: '14px',
     md: '16px',
     lg: '20px',
     xl: '24px',
-    xxl: '34px',
+    xxl: '32px',
   },
   fontStyle: {
     normal: 'normal',
   },
   fontWeight: {
-    medium: 'medium',
-    regular: 'regular',
+    light: '300',
+    regular: '400',
+    medium: '500',
+    semiBold: '600',
+    bold: '700',
   },
-  lineHeight: {
-    sm: '16px',
-    md: '20px',
-    lg: '24px',
-    xl: '36px',
-  },
-  textTransform: {
-    upperCase: 'uppercase',
-  },
+
   mixins: {
     typography: {
       body1: css`
-        font-family: ${() => theme.fontFamily.primary};
-        font-style: ${() => theme.fontStyle.normal};
         font-weight: ${() => theme.fontWeight.regular};
         font-size: ${() => theme.fontSize.md};
-        line-height: ${() => theme.lineHeight.lg};
-        letter-spacing: ${() => theme.letterSpacing.lg};
-        color: ${() => theme.colors.darkHard};
-      `,
-      body2: css`
+        color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
-        font-weight: ${() => theme.fontWeight.regular};
-        font-size: ${() => theme.fontSize.sm};
-        line-height: ${() => theme.lineHeight.md};
-        letter-spacing: ${() => theme.letterSpacing.md};
-        color: ${() => theme.colors.darkSoft};
       `,
       overline: css`
+        font-size: ${() => theme.fontSize.sm};
+        font-weight: ${() => theme.fontWeight.medium};
+        color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
-        font-weight: ${() => theme.fontWeight.medium};
-        font-size: ${() => theme.fontSize.xs};
-        line-height: ${() => theme.lineHeight.sm};
-        letter-spacing: ${() => theme.letterSpacing.xxl};
-        color: ${() => theme.colors.darkHard};
-        text-transform: ${() => theme.textTransform.upperCase};
+        text-transform: uppercase;
+      `,
+      h2: css`
+        font-size: ${() => theme.fontSize.xxl};
+        font-weight: ${() => theme.fontWeight.light};
+        color: ${() => theme.colors.lightMedium};
+        font-family: ${() => theme.fontFamily.primary};
+        font-style: ${() => theme.fontStyle.normal};
       `,
       h4: css`
-        font-family: ${() => theme.fontFamily.primary};
-        font-style: ${() => theme.fontStyle.normal};
+        font-size: ${() => theme.fontSize.md};
         font-weight: ${() => theme.fontWeight.regular};
-        font-size: ${() => theme.fontSize.xxl};
-        line-height: ${() => theme.lineHeight.xl};
-        letter-spacing: ${() => theme.letterSpacing.xxs};
-        color: ${() => theme.colors.darkHard};
-      `,
-      h5: css`
+        color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
-        font-weight: ${() => theme.fontWeight.regular};
-        font-size: ${() => theme.fontSize.xl};
-        line-height: ${() => theme.lineHeight.lg};
-        letter-spacing: ${() => theme.letterSpacing.sm};
-        color: ${() => theme.colors.primary};
-      `,
-      h6: css`
-        font-family: ${() => theme.fontFamily.primary};
-        font-style: ${() => theme.fontStyle.normal};
-        font-weight: ${() => theme.fontWeight.medium};
-        font-size: ${() => theme.fontSize.lg};
-        line-height: ${() => theme.lineHeight.lg};
-        letter-spacing: ${() => theme.letterSpacing.xs};
-        color: ${() => theme.colors.primary};
       `,
       button: css`
+        font-size: ${() => theme.fontSize.md};
+        font-weight: ${() => theme.fontWeight.medium};
+        color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
-        font-weight: ${() => theme.fontWeight.medium};
+      `,
+      input: css`
+        padding: 11px 16px;
+        border: 1px solid ${() => theme.colors.lightSoft};
+        border-radius: 8px;
+        line-height: 120%;
         font-size: ${() => theme.fontSize.sm};
-        line-height: ${() => theme.lineHeight.sm};
-        letter-spacing: ${() => theme.letterSpacing.xl};
-        color: ${() => theme.colors.primary};
+        font-family: ${() => theme.fontFamily.primary};
+        color: ${() => theme.colors.lightHard};
+
+        &::placeholder {
+          color: ${() => theme.colors.lightSoft};
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &--incorrect {
+          color: rgba(${() => theme.colors.redMedium}, 0.4);
+          border-color: ${() => theme.colors.redMedium};
+        }
+
+        &--incorrect::placeholder {
+          color: rgba(${() => theme.colors.redMedium}, 0.4);
+          border-color: ${() => theme.colors.redMedium};
+        }
       `,
     },
   },
