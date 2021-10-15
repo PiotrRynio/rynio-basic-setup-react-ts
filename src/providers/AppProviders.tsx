@@ -7,7 +7,8 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const InitialHelmet = () => (
   <Helmet>
-    <title>My App</title>
+    <title>Rynio Piotr - My App</title>
+    <link rel="stylesheet" href="./../assets/styles/fonts.css" />
   </Helmet>
 );
 
