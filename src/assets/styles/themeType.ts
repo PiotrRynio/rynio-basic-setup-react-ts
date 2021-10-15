@@ -3,10 +3,10 @@ export type Theme = {
     typography: {
       button: any;
       input: any;
-      body1: any;
-      h2: any;
+      regular: any;
+      heading2: any;
+      heading4: any;
       overline: any;
-      h4: any;
     };
   };
   fontFamily: { primary: string };

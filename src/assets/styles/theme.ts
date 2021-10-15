@@ -51,7 +51,7 @@ export const theme: Theme = {
 
   mixins: {
     typography: {
-      body1: css`
+      regular: css`
         font-weight: ${() => theme.fontWeight.regular};
         font-size: ${() => theme.fontSize.md};
         color: ${() => theme.colors.lightMedium};
@@ -66,14 +66,14 @@ export const theme: Theme = {
         font-style: ${() => theme.fontStyle.normal};
         text-transform: uppercase;
       `,
-      h2: css`
+      heading2: css`
         font-size: ${() => theme.fontSize.xxl};
         font-weight: ${() => theme.fontWeight.light};
         color: ${() => theme.colors.lightMedium};
         font-family: ${() => theme.fontFamily.primary};
         font-style: ${() => theme.fontStyle.normal};
       `,
-      h4: css`
+      heading4: css`
         font-size: ${() => theme.fontSize.md};
         font-weight: ${() => theme.fontWeight.regular};
         color: ${() => theme.colors.lightMedium};
