@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { theme } from 'assets/styles/theme';
 import { GlobalStyles } from 'assets/styles/GlobalStyles';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { primaryFonts } from 'assets/styles/fonts';
 
 const InitialHelmet = () => (
   <Helmet>
-    <title>Rynio Piotr - My App</title>
-    <link rel="stylesheet" href="./../assets/styles/fonts.css" />
+    <title>GoT API app</title>
+    <link rel="stylesheet" href={primaryFonts} />
   </Helmet>
 );
 
@@ -17,10 +17,8 @@ const AppProviders = ({ children }: { children: React.ReactNode }) => {
     <HelmetProvider>
       <InitialHelmet />
       <ThemeProvider theme={theme}>
-        <Router>
-          <GlobalStyles theme={theme} />
-          {children}
-        </Router>
+        <GlobalStyles theme={theme} />
+        {children}
       </ThemeProvider>{' '}
     </HelmetProvider>
   );

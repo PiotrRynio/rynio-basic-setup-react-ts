@@ -1,17 +1,21 @@
 import React from 'react';
-import AppProviders from 'providers/AppProviders';
-import { Body1 } from './App.styles';
-import Home from '../Home/Home';
+import Home from 'views/Home/Home';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { Wrapper } from './App.styles';
 
 function App() {
   return (
-    <AppProviders>
-      <div>
-        HelloWorld
-        <Body1>Let's do it!</Body1>
-        <Home />
-      </div>
-    </AppProviders>
+    <Wrapper>
+      <Switch>
+        <Route exact path="/">
+          HelloWorld Let's do it!
+          <Home />
+        </Route>
+        <Route path="/">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
+    </Wrapper>
   );
 }
 

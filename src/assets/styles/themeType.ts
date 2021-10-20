@@ -2,12 +2,12 @@ export type Theme = {
   mixins: {
     typography: {
       button: any;
-      input: any;
       regular: any;
       heading2: any;
       heading4: any;
       overline: any;
     };
+    textInput: any;
   };
   fontFamily: { primary: string };
   letterSpacing: {
@@ -29,9 +29,11 @@ export type Theme = {
     xxl: string;
   };
   breakpoints: {
+    xxs: string;
     xl: string;
     md: string;
     sm: string;
+    xs: string;
     lg: string;
     xxl: string;
   };
@@ -39,13 +41,14 @@ export type Theme = {
     normal: string;
   };
   colors: {
-    darkHard: string;
-    redMedium: string;
-    darkMedium: string;
-    lightHard: string;
-    lightSoft: string;
     primary: string;
+    primaryDark: string;
+    secondary: string;
+    darkHard: string;
+    darkMedium: string;
     lightMedium: string;
+    lightHard: string;
+    redMedium: string;
   };
   fontWeight: {
     light: string;

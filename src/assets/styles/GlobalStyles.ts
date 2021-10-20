@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    border-left: 1px solid #000;
+    border-right: 1px  ${({ theme }) => theme.colors.primary} solid;
   }
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.primary};
